@@ -28,6 +28,11 @@ public class GridController
 		}
 	}
 	
+	public void changeInfo(int row, int col, String info)
+	{
+		boxen[row][col].setInfo(info);
+	}
+	
 	public void start()
 	{
 		

@@ -5,17 +5,21 @@ public class Box
 	private int length;
 	private int width;
 	private int hight;
+	private String info;
 	
+
+
 	public Box()
 	{
 		length = 10;
 		width = 10;
 		hight = 10;
+		info = "Empty";
 	}
 	
 	public String toString()
 	{
-		return "The size is " + length + "x" + width + "x" + "hight";
+		return info;
 	}
 
 	public int getLength() {
@@ -40,6 +44,13 @@ public class Box
 
 	public void setHight(int hight) {
 		this.hight = hight;
+	}
+	public String getInfo() {
+		return info;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
 	}
 
 }

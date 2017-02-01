@@ -21,9 +21,17 @@ public class GridFrame extends JFrame
 	private void setupFrame()
 	{
 		this.setContentPane(appPanel);
-		this.setTitle("stuff");
+		this.setTitle("Boxen and stuff");
 		this.setSize(new Dimension(800, 600));
 		this.setVisible(true);
+	}
+
+	public GridController getBaseController() {
+		return baseController;
+	}
+
+	public GridPanel getContentPane() {
+		return appPanel;
 	}
 
 }

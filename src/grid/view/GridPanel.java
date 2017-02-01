@@ -3,6 +3,7 @@ package grid.view;
 import javax.swing.*;
 import grid.controller.GridController;
 import javax.swing.table.*;
+import java.awt.event.*;
 
 public class GridPanel extends JPanel 
 {
@@ -13,6 +14,7 @@ public class GridPanel extends JPanel
 	private JTextField info;
 	private JLabel rowsLabel;
 	private JLabel colsLabel;
+
 	private JLabel titleLabel;
 	private JButton updateButton;
 	
@@ -49,10 +51,7 @@ public class GridPanel extends JPanel
 		gridTable = new JTable();
 		gridTable.setModel(data);
 		gridPane = new JScrollPane();
-		baseLayout.putConstraint(SpringLayout.NORTH, gridPane, 10, SpringLayout.NORTH, this);
-		baseLayout.putConstraint(SpringLayout.WEST, gridPane, 160, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.SOUTH, gridPane, -10, SpringLayout.SOUTH, this);
-		baseLayout.putConstraint(SpringLayout.EAST, gridPane, -10, SpringLayout.EAST, this);
+		
 		gridPane.setViewportView(gridTable);
 	}
 	
@@ -81,10 +80,25 @@ public class GridPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, colsLabel, 0, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.SOUTH, colsLabel, -6, SpringLayout.NORTH, cols);baseLayout.putConstraint(SpringLayout.NORTH, updateButton, 6, SpringLayout.SOUTH, info);
 		baseLayout.putConstraint(SpringLayout.WEST, updateButton, 0, SpringLayout.WEST, this);
-		
+		baseLayout.putConstraint(SpringLayout.NORTH, gridPane, 10, SpringLayout.NORTH, this);
+		baseLayout.putConstraint(SpringLayout.WEST, gridPane, 160, SpringLayout.WEST, this);
+		baseLayout.putConstraint(SpringLayout.SOUTH, gridPane, -10, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.EAST, gridPane, -10, SpringLayout.EAST, this);
 	}
 	private  void setupListeners()
 	{
+		updateButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
 		
+		
+	}
+	
+	public GridController getBaseController() {
+		return baseController;
 	}
 }

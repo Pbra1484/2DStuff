@@ -8,6 +8,8 @@ public class GridController
 	private GridFrame appFrame;
 	private Box[][] boxen;
 	
+
+
 	public GridController()
 	{
 		boxen = new Box[10][10];
@@ -35,5 +37,12 @@ public class GridController
 	{
 		return boxen;
 	}
+	public GridFrame getFrame() {
+		return appFrame;
+	}
 
+	public void setFrame(GridFrame appFrame) {
+		this.appFrame = appFrame;
+	}
+	
 }

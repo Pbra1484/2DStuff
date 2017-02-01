@@ -8,10 +8,11 @@ public class GridController
 	private GridFrame appFrame;
 	private Box[][] boxen;
 	
-	GridController()
+	public GridController()
 	{
 		boxen = new Box[10][10];
 		makeBoxen();
+		appFrame = new GridFrame(this);
 	}
 	
 	private void makeBoxen()

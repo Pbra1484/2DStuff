@@ -2,6 +2,7 @@ package grid.view;
 
 import javax.swing.*;
 import grid.controller.GridController;
+import javax.swing.table.*;
 
 public class GridPanel extends JPanel 
 {
@@ -13,6 +14,9 @@ public class GridPanel extends JPanel
 	private JLabel rowsLabel;
 	private JLabel colsLabel;
 	private JLabel titleLabel;
+	
+	private JTable gridTable;
+	private JScrollPane gridPane;
 	
 	GridPanel(GridController baseController)
 	{
@@ -26,9 +30,19 @@ public class GridPanel extends JPanel
 		colsLabel = new JLabel("Column");
 		titleLabel = new JLabel("Title");
 		
+		setupTable();
 		setupPanel();
 		setupLayout();
 		setupListeners();
+	}
+	
+	private void setupTable()
+	{
+		DefaultTableModel data = new DefaultTableModel(baseController.getGrid(), new String []{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"});
+		fridTable = neew JTable();
+		gridTable.setModel(data);
+		gridPane = new JScrollPane();
+		gridPane.setViewportView(gridTable);
 	}
 	
 	private void setupPanel()

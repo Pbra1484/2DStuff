@@ -19,7 +19,7 @@ public class Box
 	
 	public String toString()
 	{
-		return info;
+		return "Box has" + info;
 	}
 
 	public int getLength() {
